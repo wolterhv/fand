@@ -1,0 +1,13 @@
+o 2021-05-22 Read config first from /etc/fand/config.ini, then from home
+o 2021-05-17 Implement output filter
+o 2021-05-22 Implement server-independent fan interface
+o 2021-05-22 Catch errors on file loading for config loaders
+o 2021-05-22 Catch timer-related errors
+o 2021-05-22 Catch fan interface errors 
+o 2021-05-22 Catch cpu temp. reading errors
+o 2021-05-22 Catch log-writing errors
+
+x 2021-05-21 2021-05-17 Implement PWM range in fan interface / config
+x 2021-05-22 2021-05-17 Implement logger timer
+x 2021-05-16 2021-05-13 Add temperature hysteresis with tempr_tgt on upper limit (fan shall shut off if due to low CPU use temperature drops)
+x 2021-05-21 2021-05-13 Separate sensor and actuator specifics from main control system

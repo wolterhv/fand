@@ -1,0 +1,53 @@
+Controller
+----------
+
+The controller can be a simple PID controller.
+
+Output: fan PWM duty cycle
+Input:  CPU temperature (filtered, see § Input filter).
+
+The input shall be sampled at 0,20 Hz. The output may be updated with the same
+frequency.
+
+
+Input filter
+------------
+
+First-order low pass filter will be used, with discrete transfer function
+
+                b
+    H(z) = ------------ ,
+           1 - a z^(-1)
+
+which is implemented in the discrete time domain via the following equation:
+
+    y_filt[n] = (1-g)*y_filt[n-1] + g*y_raw[n] ,
+
+where 
+
+    y_raw[n]     is the current input value,
+    y_filt[n-1]     the previous output value, and 
+    y_filt[n]       the current output value, 
+
+g, a and b are related by the following equations
+
+    b = g
+    a = 1 - g .
+
+According to data analysis, a g = 0.125 is adequate for filtering the
+temperature signal.
+
+
+Hysteresis
+----------
+
+Option 1: Minimal significant PWM DC
+ +
+Option 2: Temperature limits
+ + Easier to interpret
+ - Needs calculations or reconfiguration to make DC start out smooth
+
+
+Tuning
+------
+
