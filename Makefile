@@ -1,7 +1,7 @@
 SHELL:=/bin/bash
 
 compile:
-	gcc -g -lm -lrt -lpigpiod_if2 -linih -o fand cpu_interface_generic.c fan_interface_pigpiodif2.c fand.c
+	gcc -g -lm -lrt -lpigpiod_if2 -linih -o fand cpu_interface_generic.c fan_interface_pigpiodif2_pipe.c fand.c
 
 send:
 	scp Makefile                    wolter@rastapi.local:fand/
