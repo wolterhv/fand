@@ -1,3 +1,8 @@
+o 2021-08-28 Implement variable log file location
+o 2021-08-28 Implement capacitor bypass control
+o 2021-08-28 Finish README
+o 2021-08-28 Configure CMakeLists.txt
+o 2021-08-28 Add tests
 o 2021-05-22 Read config first from /etc/fand/config.ini, then from home
 o 2021-05-17 Implement output filter
 o 2021-05-22 Implement server-independent fan interface
